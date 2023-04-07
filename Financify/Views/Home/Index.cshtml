@@ -1,0 +1,63 @@
+﻿@{
+    ViewBag.Title = "Personal Finance Dashboard";
+}
+
+<div class="container">
+    <h1>@ViewBag.Title</h1>
+    <p>Welcome to your personal finance dashboard! Here you can keep track of your finances and spending.</p>
+    <hr />
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header bg-success text-white">
+                    Budget Creation and Tracking
+                </div>
+                <div class="card-body">
+                    <p class="card-text">Create and track your budgets here.</p>
+                    <a href="@Url.Action("CreateBudget", "Budget")" class="btn btn-success">Create Budget</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header bg-warning text-white">
+                    Income and Expense Tracking
+                </div>
+                <div class="card-body">
+                    <p class="card-text">Track your income and expenses here.</p>
+                    <a href="#" class="btn btn-warning">Track Income & Expenses</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header bg-info text-white">
+                    Bill Management and Reminders
+                </div>
+                <div class="card-body">
+                    <p class="card-text">Manage and set reminders for your bills here.</p>
+                    <a href="#" class="btn btn-info">Manage Bills</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header bg-secondary text-white">
+                    Financial Goal Setting and Progress Tracking
+                </div>
+                <div class="card-body">
+                    <p class="card-text">Set and track your financial goals here.</p>
+                    <a href="#" class="btn btn-secondary">Set Financial Goals</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section styles {
+    <link href="~/css/site.css" rel="stylesheet" />
+}
