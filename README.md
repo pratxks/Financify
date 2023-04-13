@@ -19,7 +19,7 @@ A Web App to Manage Budgets and Track Expenses.
 
 ## Architecture
 
-This project uses ASP.NET Core 3.1 and Model View Controller (MVC) architecture. The project dependencies include EntityFrameworkCore, EntityFrameworkCore.tools, and EntityFrameworkCore.SQLServer (version=3.1.32). 
+This project uses ASP.NET Core 6.0 and Model View Controller (MVC) architecture. The project dependencies include EntityFrameworkCore, EntityFrameworkCore.tools, and EntityFrameworkCore.SQLServer (version=6.0.16). 
 
 In order to set up the database, you need to run the following commands in the Package Manager Console: 
 - `Update-Database -Context BudgetDbContext`
