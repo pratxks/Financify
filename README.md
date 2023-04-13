@@ -31,5 +31,5 @@ In order to set up the database, you need to run the following commands in the P
 
 ### [Tyson Levy](https://github.com/TysonLevy)
 
-### [Brian Kenkel](https://github.com/)
+### [Brian Kenkel](https://github.com/kenkelbt)
 
