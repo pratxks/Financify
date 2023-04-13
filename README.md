@@ -1,29 +1,35 @@
 # Financify
-
-NET 3.1
-Installed Entityframeworkcore + tools + sql server (version=3.1.32)
+A Web App to Manage Budgets and Track Expenses.
 
 
-Finance App.
+## Layout
 
-Page 1- Homepage (that contains 4 personal finance options- Page 2, Page 3, Page 4, Page 5.)
+**1. Homepage:** Welcome to your personal finance dashboard! This page is where you can access all the tools you need to manage your finances effectively. You can create budgets, view budgets, input transactions, view transaction history, track your savings, and learn how to use the app.
 
-Options: 
+**2. Create Budgets/View Budgets:** This page allows you to create/edit/delete budgets for different categories such as food, housing, entertainment, and more. You can also view existing budgets for different usernames. This will help you set budgets for different categories so you can spend accordingly.
 
-Page 2- Track Budget- Allows user to create a budget for monthly expenses of different categories (housing, food, entertainment etc.). The total budget cannot exceed users income. The total budget also includes monthly recurring/subscription bills that the user adds in Page 4. This data along with user’s income is stored in the DATABASE.
+**3. Add Transactions/View Transactions:** On this page, you can add transactions by choosing a username to associate with the transaction, and selecting a category such as food or housing. You can also view transaction history for a specific user, and delete a transaction. This page will help you keep track of your spending and stay within your budget.
 
-Page 2, also has a button to navigate to page 4to set monthly recurring bills (read more in page 4 info)
+**4. Savings Tracker:** The savings tracker displays a table view of all categories and the current balance (budget - expenses). It also includes a graph that shows your progress towards your savings goal (income - budget). This page will help you stay on track with your savings goals and make informed decisions about your spending.
 
-Page 3- Spending Tracker- if budget is not set, this page prompts user to set budget first. User can Input daily transactions along with its category. The total transactions should not exceed the Budget of each category.
+**5. About Us:** This page includes information about the team members behind the app.
 
-~if expenses in each category (food, housing etc.) doesn’t exceed the budget, the total expenses (of all categories) will not exceed the total budget (of all categories)
-
-Page 4- Bill Management & Reminders- Allows user to input monthly recurring bills/subscriptions along with its due date. These bills should automatically be added to “Total Budget” on Page 2. User gets a pop up (on homepage) of “bill due” if current date matches due date. Information such as Subscription name, due date, amount $, Subscription category are stored in a different DATABASE. 
-
-Page 5- Page to Track Budget, spending, bills along with progress towards the goal (set budget). Also displays savings.
+**6. How to Use the App and Its Purpose:** This page provides an explanation of how to use the app and its purpose. It will guide you through the features of the app and help you understand how to use them to manage your finances effectively.
 
 
-Page 6- Options:
-1. Login feature (not mandatory as per project requirements)
-2. Help Page- Talks about how to use the app.
-3. About Page- About the developers and App.
+## Architecture
+
+This project uses ASP.NET Core 3.1 and Model View Controller (MVC) architecture. The project dependencies include EntityFrameworkCore, EntityFrameworkCore.tools, and EntityFrameworkCore.SQLServer (version=3.1.32). 
+
+In order to set up the database, you need to run the following commands in the Package Manager Console: 
+- `Update-Database -Context BudgetDbContext`
+- `Update-Database -Context TransactionDbContext`
+
+## Team
+
+### [Pratik Chaudhari](https://github.com/pratxks)
+
+### [Tyson Levy](https://github.com/TysonLevy)
+
+### [Brian Kenkel](https://github.com/)
+
