@@ -1,9 +1,9 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
-using NewFinancify.Models;
+using Financify.Models;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace NewFinancify.Data
+namespace Financify.Data
 {
     [Table("Budgets")]
     public class BudgetDbContext : DbContext

@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 
-namespace NewFinancify.Models
+namespace Financify.Models
 {
     public class Budget
     {

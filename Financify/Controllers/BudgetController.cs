@@ -4,12 +4,12 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using NewFinancify.Models;
-using NewFinancify.Data;
+using Financify.Models;
+using Financify.Data;
 using System.Reflection;
 using Microsoft.EntityFrameworkCore;
 
-namespace NewFinancify.Controllers
+namespace Financify.Controllers
 {
     public class BudgetController : Controller
     {
