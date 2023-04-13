@@ -1,0 +1,98 @@
+﻿@model TransactionViewModel
+
+@if (ViewBag.InputTransaction == true)
+{
+    <h2>Input Transactions</h2>
+
+    @using (Html.BeginForm("AddTransaction", "Transaction", FormMethod.Post))
+    {
+        <div class="form-group">
+            <label for="userId">User ID:</label>
+
+            <select class="form-control" id="userId" name="userId" required>
+                <option value="">--Select User ID--</option>
+                @foreach (var budget in Model.BudgetList)
+                {
+                    <option value="@budget.UserId">@budget.UserId</option>
+                }
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="category">Transaction Category:</label>
+
+            <select class="form-control" id="Category" name="Category" required>
+                <option value="">--Select Category--</option>
+                @foreach (var item in Model.TransactionCategoryList)
+                {
+                    <option value="@item">@item</option>
+                }
+            </select>
+            
+            <span class="text-danger" id="remainingBudget"></span>
+            <input type="hidden" id="rbudget" name="rbudget" />
+        </div>
+
+        <div class="form-group">
+            <label for="amount">Amount:</label>
+            <input type="number" class="form-control" id="Amount" name="Amount" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary" onclick="return checkAmount()">Add Transaction</button>
+    }
+}
+else
+{
+    if (ViewBag.TransactionSuccess == true)
+    {
+        <h2>Transaction Added Successfully</h2>
+        <br />
+        <a asp-controller="Transaction" asp-action="InitViewTransaction" class="btn btn-success">View Transactions</a>
+        <span style="padding: 1rem"></span>
+        <a asp-controller="Transaction" asp-action="InitAddTransaction" class="btn btn-info">Add Another Transactions</a>
+    }
+    else
+    {
+        <h2>@ViewBag.ErrorMessage</h2>
+        <br />
+        <a asp-controller="Transaction" asp-action="InitViewTransaction" class="btn btn-warning">View Transactions</a>
+    }
+}
+@section scripts{
+    <script>
+        $(function () {
+            $('#Category').change(function () {
+                var category = $(this).val();
+
+                console.log("Category => " + category + " " + $('#userId').val());
+
+                var userId = $('#userId').val();
+
+                if (category && userId) {
+                    console.log("there => " + category + " " + userId);
+                    $.ajax({
+                        url: '@Url.Action("GetRemainingBudget", "Transaction")',
+                        data: { category: category, userId: userId },
+                        success: function (result) {
+                            $('#rbudget').val(result);
+                            $('#remainingBudget').text('Remaining budget: ' + result);
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+    <script>
+        function checkAmount() {
+
+            var amount = parseFloat(document.getElementById("Amount").value);
+            var remainingbudget = parseFloat(document.getElementById("rbudget").value);
+
+            if (remainingbudget < amount) {
+                alert("Amount cannot exceed Remaining Budget");
+                return false;
+            }
+        }
+    </script>
+}
+
