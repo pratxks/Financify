@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace NewFinancify.Models
+namespace Financify.Models
 {
     public class Transaction
     {
