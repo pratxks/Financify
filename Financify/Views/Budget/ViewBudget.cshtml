@@ -1,0 +1,40 @@
+﻿@model BudgetViewModel
+<h2>Budgets</h2>
+<br />
+<table class="table">
+    <thead>
+        <tr>
+            <th>User ID</th>
+            <th align="center">Income</th>
+            <th align="center">Food</th>
+            <th align="center">Housing</th>
+            <th align="center">Entertainment</th>
+            <th align="center">Other</th>
+            <th align="center">Total</th>
+            <th align="center"></th>
+            <th align="center"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var budget in @Model.BudgetList)
+        {
+            <tr>
+                <td>@budget.UserId</td>
+                <td align="center">@budget.Income</td>
+                <td align="center">@budget.FoodBudget</td>
+                <td align="center">@budget.HousingBudget</td>
+                <td align="center">@budget.EntertainmentBudget</td>
+                <td align="center">@budget.OtherBudget</td>
+                <td align="center">@budget.TotalBudget</td>
+                <td align="center">
+                    <a asp-controller="Budget" asp-action="Edit" asp-route-id="@budget.UserId" class="btn btn-primary">Edit</a>
+                </td>
+                <td align="center">
+                    <a asp-controller="Budget" asp-action="Delete" asp-route-id="@budget.UserId" class="btn btn-danger" onclick="return confirm('Are you sure want to delete?');">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a asp-controller="Budget" asp-action="Index" class="btn btn-info">Back</a>
+
