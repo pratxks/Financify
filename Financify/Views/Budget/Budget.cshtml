@@ -1,0 +1,89 @@
+﻿@model Budget
+
+@if (ViewBag.NewBudget == true)
+{
+    <h2>Create a new budget</h2>
+    <form asp-action="CreateBudget" oninput="totalBudget.value=parseInt(foodBudget.value)+parseInt(housingBudget.value)+parseInt(entertainmentBudget.value)+parseInt(otherBudget.value);">
+        <div class="form-group">
+            <label for="userId">UserId:</label>
+            <input type="text" class="form-control" id="userId" name="UserId" required>
+        </div>
+        <div class="form-group">
+            <label for="income">Income:</label>
+            <input type="number" class="form-control" id="income" name="Income" required>
+        </div>
+        <div class="form-group">
+            <label for="foodBudget">Food budget:</label>
+            <input type="number" class="form-control" id="foodBudget" name="FoodBudget" required>
+        </div>
+        <div class="form-group">
+            <label for="housingBudget">Housing budget:</label>
+            <input type="number" class="form-control" id="housingBudget" name="HousingBudget" required>
+        </div>
+        <div class="form-group">
+            <label for="entertainmentBudget">Entertainment budget:</label>
+            <input type="number" class="form-control" id="entertainmentBudget" name="EntertainmentBudget" required>
+        </div>
+        <div class="form-group">
+            <label for="otherBudget">Other budget:</label>
+            <input type="number" class="form-control" id="otherBudget" name="OtherBudget" required>
+        </div>
+        <div class= "form-group">
+            <label for= "totalBudget" > Total budget:</label>
+            <output name = "totalBudget" for= "foodBudget housingBudget entertainmentBudget otherBudget"></output>
+        </div>
+
+        <button type="submit" class="btn btn-primary" onclick="return checkBudget()">Create budget</button>
+    </form>
+}
+else
+{
+    <h2>Budget Created Successfully</h2>
+    <br />
+    <h3>@Model.UserId's Budget:</h3>
+    <br />
+    <table class="table">
+        <tbody>
+            <tr>
+                <td>Income:</td>
+                <td>@Model.Income</td>
+            </tr>
+            <tr>
+                <td>Food budget:</td>
+                <td>@Model.FoodBudget</td>
+            </tr>
+            <tr>
+                <td>Housing budget:</td>
+                <td>@Model.HousingBudget</td>
+            </tr>
+            <tr>
+                <td>Entertainment budget:</td>
+                <td>@Model.EntertainmentBudget</td>
+            </tr>
+            <tr>
+                <td>Other budget:</td>
+                <td>@Model.OtherBudget</td>
+            </tr>
+            <tr>
+                <td>Total budget:</td>
+                <td>@Model.TotalBudget</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a asp-controller="Budget" asp-action="ListBudgets" class="btn btn-success">View Budgets</a>
+    <a asp-controller="Budget" asp-action="Create" class="btn btn-success">Create Another Budget</a>
+}
+<script>
+    function checkBudget() 
+    {
+        var income = parseInt(document.getElementById("income").value);
+        var totalBudget = parseInt(document.getElementsByName("totalBudget")[0].value);
+        if (totalBudget > income)
+        {
+            alert("Total budget including all categories cannot exceed Income");
+            return false;
+        }
+    }
+</script>
+

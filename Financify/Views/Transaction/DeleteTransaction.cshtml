@@ -1,0 +1,13 @@
+﻿@if (ViewBag.TransactionDeletedSuceess == true)
+{
+    <h2>Transaction Deleted Successfully</h2>
+    <br />
+    <a asp-controller="Transaction" asp-action="InitViewTransaction" class="btn btn-success">View Transactions</a>
+}
+else
+{
+    <h2>Error in Deleting Transaction</h2>
+    <br />
+    <a asp-controller="Transaction" asp-action="InitViewTransaction" class="btn btn-success">View Transactions</a>
+}
+
