@@ -1,0 +1,77 @@
+﻿@model SavingsViewModel
+
+@if (ViewBag.ViewForm == true)
+{
+    <h2>View Savings</h2>
+
+    @using (Html.BeginForm("ListSavings", "Savings", FormMethod.Post))
+    {
+        <div class="form-group">
+            <label for="userId">User ID:</label>
+
+            <select class="form-control" id="UserId" name="UserId" required>
+                <option value="">--Select User ID--</option>
+                @foreach (var budget in Model.BudgetList)
+                {
+                    <option value="@budget.UserId">@budget.UserId</option>
+                }
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary">View Savings</button>
+    }
+}
+@if (ViewBag.ViewSavings == true)
+{
+    <h2>@Model.USERID's Savings</h2>
+    <br />
+    <table class="table">
+        <tbody>
+           
+            <tr>
+                <th id="th1" style="width: 100px;">Food Savings</th>
+            </tr>
+            <tr>
+                <td headers="th1" style="width: 100px;">@Model.FoodSavings</td>
+            </tr>
+
+            <tr>
+                <th id="th1" style="width: 100px;">Housing Savings</th>
+            </tr>
+            <tr>
+                <td headers="th1" style="width: 100px;">@Model.HousingSavings</td>
+            </tr>
+
+            <tr>
+                <th id="th1" style="width: 100px;">Entertainment Savings</th>
+            </tr>     
+            <tr>
+                <td headers="th1" style="width: 100px;">@Model.EntertainmentSavings</td>
+            </tr>
+
+            <tr>
+                <th id="th1" style="width: 100px;">Other Savings</th>
+            </tr>     
+            <tr>
+                <td headers="th1" style="width: 100px;">@Model.OtherSavings</td>
+            </tr>
+
+            <tr>
+                <th id="th1" style="width: 100px;">Total Budgeted Savings (Budget Total - Transaction Total)</th>
+            </tr>
+            <tr>
+                <td headers="th1" style="width: 100px;">@Model.TotalSavings</td>
+            </tr>
+
+            <tr>
+                <th id="th1" style="width: 100px;">Non-Budgeted Savings (Income - Budget Total)</th>
+            </tr>
+            <tr>
+                <td headers="th1" style="width: 100px;">@Model.NonBudgetSavings</td>
+            </tr>
+                    
+        </tbody>
+    </table>
+    <br />
+    <a asp-controller="Savings" asp-action="InitViewSavings" class="btn btn-info">View Another</a>
+}
