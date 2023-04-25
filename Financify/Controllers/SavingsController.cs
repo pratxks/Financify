@@ -65,6 +65,7 @@ namespace Financify.Controllers
             viewModel.EntertainmentSavings = budget.EntertainmentBudget - TransactionTotals[2];
             viewModel.OtherSavings         = budget.OtherBudget         - TransactionTotals[3];
             viewModel.TotalSavings         = budget.TotalBudget         - TransactionTotals[4];
+            viewModel.NonBudgetSavings     = budget.Income              - budget.TotalBudget;
 
             ViewBag.ViewSavings = true;
 

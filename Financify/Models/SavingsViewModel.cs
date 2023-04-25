@@ -17,5 +17,7 @@ namespace Financify.Models
         public decimal OtherSavings { get; set; }
 
         public decimal TotalSavings { get; set; }
+
+        public decimal NonBudgetSavings { get; set;}
     }
 }
