@@ -198,11 +198,11 @@ namespace Financify.Controllers
         }
 
         // GET: Transaction/Delete
-        public async Task<IActionResult> Delete(string transactionId)
+        public async Task<IActionResult> Delete(string id)
         {
             ViewBag.TransactionDeletedSuceess = false;
 
-            var transaction = await _transactioncontext.Transactions.FirstOrDefaultAsync(t => t.TransactionId == transactionId);
+            var transaction = await _transactioncontext.Transactions.FirstOrDefaultAsync(t => t.TransactionId == id);
 
             if (transaction == null)
             {
