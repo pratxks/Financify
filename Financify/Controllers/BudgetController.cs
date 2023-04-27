@@ -149,36 +149,6 @@ namespace Financify.Controllers
             return View("DeleteBudget", budget);
         }
 
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public async Task<IActionResult> DeleteBudget(Budget model)
-        //{
-        //    if (model.UserId == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    var budget = await _context.Budgets.FindAsync(model.UserId);
-        //    if (budget == null)
-        //    {
-        //        return NotFound();
-        //    }
-        //    else
-        //    {
-        //        budget.UserId = model.UserId;
-        //        budget.Income = model.Income;
-        //        budget.FoodBudget = model.FoodBudget;
-        //        budget.HousingBudget = model.HousingBudget;
-        //        budget.EntertainmentBudget = model.EntertainmentBudget;
-        //        budget.OtherBudget = model.OtherBudget;
-        //    }
-
-        //    _context.Remove(budget);
-        //    await _context.SaveChangesAsync();
-
-        //    return View("DeleteBudget", model);
-        //}
-
     }
 
 }
