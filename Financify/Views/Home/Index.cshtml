@@ -1,65 +1,118 @@
 ﻿@{
-    ViewBag.Title = "Personal Finance Dashboard";
+    ViewBag.Title = "";
 }
 
+<br />
 <div class="container">
-    <h1>@ViewBag.Title</h1>
-    <p>Welcome to your personal finance dashboard! Here you can keep track of your finances and spending.</p>
+
+        <h1 class="mb-4">Welcome to your personal finance dashboard!</h1>
+        <p class="lead">This page is where you can access all the tools you need to manage your finances effectively. You can create budgets, view budgets, input transactions, view transaction history, track your savings, and learn how to use the app.</p>
+
     <hr />
 
     <div class="row">
+
         <div class="col-md-6">
+
             <div class="card">
-                <div class="card-header bg-success text-white">
+
+                <div class="card-header bg-custom text-white" font-weight: bold>
+
                     Budget Creation and Tracking
+
                 </div>
+
                 <div class="card-body">
                     <p class="card-text">Create and track your budgets here.</p>
-                    <a asp-controller="Budget" asp-action="Create" class="btn btn-success">Create New Budget</a>&nbsp;&nbsp;&nbsp;
-                    <a asp-controller="Budget" asp-action="ListBudgets" class="btn btn-success">View Budgets</a>
+
+                    <a asp-controller="Budget" asp-action="Create" class="btn btn-organisation-1">Create New Budget</a>
+
+                    <a asp-controller="Budget" asp-action="ListBudgets" class="btn btn-organisation-2">View Budgets</a>
+
                 </div>
+
             </div>
+
         </div>
+
         <div class="col-md-6">
+
             <div class="card">
-                <div class="card-header bg-info text-white">
-                    Expense Tracking
+
+                <div class="card-header bg-custom text-white" font-weight: bold>
+
+                    Expense Creation and Tracking
+
                 </div>
+
                 <div class="card-body">
+
                     <p class="card-text">Track your spending here.</p>
-                    <a asp-controller="Transaction" asp-action="InitAddTransaction" class="btn btn-info">Add Transactions</a>&nbsp;&nbsp;&nbsp;
-                    <a asp-controller="Transaction" asp-action="InitViewTransaction" class="btn btn-info">Transaction History</a>
+
+                    <a asp-controller="Transaction" asp-action="InitAddTransaction" class="btn btn-organisation-1">Add Transactions</a>
+
+                    <a asp-controller="Transaction" asp-action="InitViewTransaction" class="btn btn-organisation-2">Transaction History</a>
+
                 </div>
+
             </div>
+
         </div>
+
     </div>
-    <br />
+
     <div class="row">
+
         <div class="col-md-6">
+
             <div class="card">
-                <div class="card-header bg-warning text-black">
-                    Financial Goal Setting and Progress Tracking
+
+                <div class="card-header bg-custom text-white" font-weight: bold>
+
+                    Savings Tracking
+
                 </div>
+
                 <div class="card-body">
-                    <p class="card-text">Set and track your financial goals here.</p>
-                    <a asp-controller="Savings" asp-action="InitViewSavings" class="btn btn-warning">Track Savings</a>
+                    <p class="card-text">Track your Savings here.</p>
+
+                    <a asp-controller="Savings" asp-action="InitViewSavings" class="btn btn-organisation-1">Track Savings</a>
+
                 </div>
+
             </div>
+
         </div>
+
         <div class="col-md-6">
+
             <div class="card">
-                <div class="card-header bg-secondary text-white">
+
+                <div class="card-header bg-custom text-white" font-weight: bold>
+
                     How to Use the App?
+
                 </div>
+
                 <div class="card-body">
                     <p class="card-text">Learn how to create budgets and add transactions.</p>
-                    <a asp-controller="Home" asp-action="TeamInfo" class="btn btn-secondary">Learn More</a>
+
+                    <a asp-controller="Home" asp-action="AboutApp" class="btn btn-organisation-1">Learn More</a>
+
                 </div>
+
             </div>
+
         </div>
+
     </div>
+
+    <br />
+
 </div>
 
+
+
 @section styles {
-    <link href="~/css/site.css" rel="stylesheet" />
+
 }
