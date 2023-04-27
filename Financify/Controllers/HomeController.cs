@@ -28,6 +28,16 @@ namespace Financify.Controllers
             return View();
         }
 
+        public IActionResult Teaminfo()
+        {
+            return View("~/Views/Information Pages/TeamInfo.cshtml");
+        }
+
+        public IActionResult AboutApp()
+        {
+            return View("~/Views/Information Pages/AboutApp.cshtml");
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
