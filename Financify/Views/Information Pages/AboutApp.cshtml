@@ -1,5 +1,44 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{
+    ViewBag.Title = "How to Use the App";
 }
+
+<div class="container">
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-8 text-center">
+            <h1 class="mb-4">Welcome, Learn How to use the App!</h1>
+            <p class="lead">This page is where you can access all the tools you need to manage your finances effectively. You can create budgets, view budgets, input transactions, view transaction history, track your savings, and learn how to use the app.</p>
+        </div>
+    </div>
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-4 mb-4">
+            <div class="card border-0 shadow">
+                <img src="https://via.placeholder.com/300x300" class="card-img-top" alt="Create Budgets/View Budgets">
+                <div class="card-body text-center">
+                    <h5 class="card-title mb-4">Create Budgets/View Budgets</h5>
+                    <p class="card-text">This page allows you to create/edit/delete budgets for different categories such as food, housing, entertainment, and more. You can also view existing budgets for different usernames. This will help you set budgets for different categories so you can spend accordingly.</p>
+                    @*<a href="#" class="btn btn-primary">Home</a>*@
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card border-0 shadow">
+                <img src="https://via.placeholder.com/300x300" class="card-img-top" alt="Add Transactions/View Transactions">
+                <div class="card-body text-center">
+                    <h5 class="card-title mb-4">Add Transactions/View Transactions</h5>
+                    <p class="card-text">On this page, you can add transactions by choosing a username to associate with the transaction, and selecting a category such as food or housing. You can also view transaction history for a specific user, and delete a transaction. This page will help you keep track of your spending and stay within your budget.</p>
+                    @*<a href="#" class="btn btn-primary">Home</a>*@
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card border-0 shadow">
+                <img src="https://via.placeholder.com/300x300" class="card-img-top" alt="Savings Tracker">
+                <div class="card-body text-center">
+                    <h5 class="card-title mb-4">Track Savings</h5>
+                    <p class="card-text">The savings tracker displays a table view of all categories and the current balance (budget - expenses). It also includes a graph that shows your progress towards your savings goal (income - budget). This page will help you stay on track with your savings goals and make informed decisions about your spending.</p>
+                    @*<a href="#" class="btn btn-primary">Home</a>*@
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
