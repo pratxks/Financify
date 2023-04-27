@@ -47,15 +47,15 @@ else
     {
         <h2>Transaction Added Successfully</h2>
         <br />
-        <a asp-controller="Transaction" asp-action="InitViewTransaction" class="btn btn-success">View Transactions</a>
+        <a asp-controller="Transaction" asp-action="InitViewTransaction" class="btn btn-organisation-1">View Transactions</a>
         <span style="padding: 1rem"></span>
-        <a asp-controller="Transaction" asp-action="InitAddTransaction" class="btn btn-info">Add Another Transactions</a>
+        <a asp-controller="Transaction" asp-action="InitAddTransaction" class="btn btn-organisation-1">Add Another Transactions</a>
     }
     else
     {
         <h2>@ViewBag.ErrorMessage</h2>
         <br />
-        <a asp-controller="Transaction" asp-action="InitViewTransaction" class="btn btn-warning">View Transactions</a>
+        <a asp-controller="Transaction" asp-action="InitViewTransaction" class="btn btn-organisation-1">View Transactions</a>
     }
 }
 @section scripts{
