@@ -104,22 +104,6 @@ namespace Financify.Controllers
                 transaction.Category = category;
                 transaction.Amount = amount;
 
-                //switch (category)
-                //{
-                //    case "Food":
-
-                //        break;
-                //    case "Housing":
-                //        transaction.HousingTransaction = amount;
-                //        break;
-                //    case "Entertainment":
-                //        transaction.EntertainmentTransaction = amount;
-                //        break;
-                //    case "Other":
-                //        transaction.OtherTransaction = amount;
-                //        break;
-                //}
-
                 _transactioncontext.Transactions.Add(transaction);
                 await _transactioncontext.SaveChangesAsync();
 

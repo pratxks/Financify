@@ -2,6 +2,7 @@
 using Financify.Data;
 using Financify.Models;
 using System.ComponentModel.DataAnnotations.Schema;
+using System;
 
 namespace Financify.Data
 {
@@ -39,6 +40,66 @@ namespace Financify.Data
             modelBuilder.Entity<Transaction>()
                 .Property(b => b.Amount)
                 .HasColumnType("decimal(18,2)");
+
+            // Seed some example data
+            modelBuilder.Entity<Transaction>().HasData(
+                new Transaction
+                {
+                    TransactionId = Guid.NewGuid().ToString(),
+                    UserId = "Pratik",
+                    Category = "Food",
+                    Amount = 10.99m,
+                },
+                new Transaction
+                {
+                    TransactionId = Guid.NewGuid().ToString(),
+                    UserId = "Pratik",
+                    Category = "Entertainment",
+                    Amount = 50.00m,
+                },
+                new Transaction
+                {
+                    TransactionId = Guid.NewGuid().ToString(),
+                    UserId = "Pratik",
+                    Category = "Food",
+                    Amount = 39.00m,
+                },
+                new Transaction
+                {
+                    TransactionId = Guid.NewGuid().ToString(),
+                    UserId = "Pratik",
+                    Category = "Entertainment",
+                    Amount = 26.00m,
+                },
+                new Transaction
+                {
+                    TransactionId = Guid.NewGuid().ToString(),
+                    UserId = "Tyson",
+                    Category = "Housing",
+                    Amount = 10.99m,
+                },
+                new Transaction
+                {
+                    TransactionId = Guid.NewGuid().ToString(),
+                    UserId = "Tyson",
+                    Category = "Food",
+                    Amount = 50.00m,
+                },
+                new Transaction
+                {
+                    TransactionId = Guid.NewGuid().ToString(),
+                    UserId = "Tyson",
+                    Category = "Other",
+                    Amount = 39.00m,
+                },
+                new Transaction
+                {
+                    TransactionId = Guid.NewGuid().ToString(),
+                    UserId = "Tyson",
+                    Category = "Entertainment",
+                    Amount = 26.00m,
+                });
+
         }
     }
 }

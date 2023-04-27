@@ -46,6 +46,38 @@ namespace Financify.Data
             modelBuilder.Entity<Budget>()
                 .Property(b => b.OtherBudget)
                 .HasColumnType("decimal(18,2)");
+
+
+            // Seed some example data
+            modelBuilder.Entity<Budget>().HasData(
+            new Budget 
+            { 
+                UserId = "Pratik", 
+                Income = 5000.00m, 
+                FoodBudget = 1000.00m, 
+                HousingBudget = 1500.00m, 
+                EntertainmentBudget = 500.00m, 
+                OtherBudget = 1000.00m 
+            },
+            new Budget
+            {
+                UserId = "Tyson",
+                Income = 3000.00m,
+                FoodBudget = 700.00m,
+                HousingBudget = 1000.00m,
+                EntertainmentBudget = 300.00m,
+                OtherBudget = 800.00m
+            },
+            new Budget
+            {
+                UserId = "John",
+                Income = 8000.00m,
+                FoodBudget = 1500.00m,
+                HousingBudget = 2500.00m,
+                EntertainmentBudget = 1000.00m,
+                OtherBudget = 1000.00m
+            }
+            );
         }
     }
 }
