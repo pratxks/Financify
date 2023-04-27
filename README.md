@@ -1,5 +1,6 @@
 # Financify
 A Web App to Manage Budgets and Track Expenses.
+Youtube Final Project Video Link: https://youtu.be/8jDapzu4u3Y
 
 
 ## Layout
