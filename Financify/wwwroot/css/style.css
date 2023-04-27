@@ -21,6 +21,8 @@
 .btn-organisation-1 {
     color: var(--black);
     border: 1px solid var(--space-cadet);
+    align-items: center;
+    justify-content: center;
     transition: var(--transition);
     margin-top: 20px;
     margin-bottom: 15px;
@@ -319,12 +321,14 @@ body {
 .btn {
     display: flex;
     align-items: center;
+    justify-content:center;
     gap: 5px;
     font-size: var(--fs-9);
     font-weight: var(--fw-600);
     padding: 8px 16px;
     border-radius: var(--radius-6);
     max-width: 170px;
+    text-align: center;
 }
 
     .btn .icon {
